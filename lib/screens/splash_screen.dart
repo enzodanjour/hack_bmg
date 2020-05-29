@@ -12,7 +12,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    pushHome();
+  }
 
+  void pushHome() {
     Navigator.pushNamed(context, HomeScreen.id);
   }
 
