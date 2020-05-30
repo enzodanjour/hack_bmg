@@ -20,3 +20,9 @@ const kTextStyle = TextStyle(
   fontFamily: 'Nunito',
   fontWeight: FontWeight.w400,
 );
+
+const kTextStyleWhite = TextStyle(
+  color: Colors.white,
+  fontFamily: 'Nunito',
+  fontWeight: FontWeight.w400,
+);
