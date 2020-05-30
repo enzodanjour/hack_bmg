@@ -17,13 +17,18 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void pushHome() {
     Future.delayed(
-      Duration.zero,
+      Duration(seconds: 2),
       () => Navigator.pushNamed(context, HomeScreen.id),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Colors.white,
+      child: Center(
+        child: Image.asset('lib/assets/images/logo.png'),
+      ),
+    );
   }
 }
