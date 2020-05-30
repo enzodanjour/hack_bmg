@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:hack_bmg_flutter/constants.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 
-class ObjectivesCard extends StatelessWidget {
+class ObjectiveTile extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final double value;
+  final double percent;
+
+  ObjectiveTile({this.icon, this.label, this.value, this.percent});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +24,7 @@ class ObjectivesCard extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Icon(
-              Icons.directions_car,
+              icon,
               color: Color(0xFF417643),
               size: 50.0,
             ),
@@ -31,7 +39,7 @@ class ObjectivesCard extends StatelessWidget {
                       bottom: 5.0,
                     ),
                     child: Text(
-                      'Novo Carro',
+                      label,
                       style: kTextStyle.copyWith(
                         fontSize: 18.0,
                       ),
@@ -46,13 +54,25 @@ class ObjectivesCard extends StatelessWidget {
                       bottom: 5.0,
                     ),
                     child: Text(
-                      'R\$30.900,00',
+                      'R\$$value',
                       style: kTextStyle.copyWith(
                         fontSize: 18.0,
                       ),
                     ),
                   ),
                 ],
+              ),
+              Padding(
+                padding: EdgeInsets.all(2.0),
+                child: FittedBox(
+                  child: LinearPercentIndicator(
+                    width: 250.0,
+                    lineHeight: 10.0,
+                    percent: percent,
+                    backgroundColor: Color(0xFFCCCCCC),
+                    progressColor: Color(0xFF417643),
+                  ),
+                ),
               ),
             ],
           ),
