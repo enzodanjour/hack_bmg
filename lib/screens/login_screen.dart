@@ -64,8 +64,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 Container(
                   margin: EdgeInsets.only(top:10, bottom: 10),
                   child: RaisedButton(
+                    splashColor: Colors.orange,
                     child: Text('Login'),
-                    color: Theme.of(context).primaryColor,
+                    color: Colors.grey,
                     onPressed: () async {
                       if(_loginFormKey.currentState.validate()){
                         try{ 

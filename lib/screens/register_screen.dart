@@ -103,7 +103,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     margin: const EdgeInsets.only(top:29.0,bottom: 20.0),
                     child: RaisedButton(
                       child: Text('Enviar'),
-                      color: Theme.of(context).primaryColor,
+                      splashColor: Colors.orange,
+                      color: Colors.grey,
                       textColor: Colors.black,
                       onPressed: () async{
                         if(_registerFormKey.currentState.validate()){
