@@ -3,6 +3,7 @@ import 'package:hack_bmg_flutter/components/accounts_list.dart';
 import 'package:hack_bmg_flutter/components/objectives_list.dart';
 import 'package:hack_bmg_flutter/constants.dart';
 import 'package:hack_bmg_flutter/components/summary_card.dart';
+import 'package:hack_bmg_flutter/screens/chat_screen.dart';
 import 'package:hack_bmg_flutter/screens/learn_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> _children = [
     HomePage(),
     LearnScreen(),
+    ChatScreen(),
   ];
 
   void _onItemTapped(int index) {
