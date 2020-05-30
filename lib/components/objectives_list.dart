@@ -3,7 +3,15 @@ import 'package:hack_bmg_flutter/components/objective_tile.dart';
 import 'package:hack_bmg_flutter/models/data_provider.dart';
 import 'package:provider/provider.dart';
 
-class ObjectivesList extends StatelessWidget {
+class ObjectivesList extends StatefulWidget {
+  @override
+  _ObjectivesListState createState() => _ObjectivesListState();
+}
+
+class _ObjectivesListState extends State<ObjectivesList> {
+  final _controller = ScrollController();
+  final bool isFull = false;
+
   @override
   Widget build(BuildContext context) {
     return Consumer<DataProvider>(
@@ -18,10 +26,11 @@ class ObjectivesList extends StatelessWidget {
               percent: objective.percent,
             );
           },
-          itemCount: data.objectives.length,
+          controller: _controller,
+          itemCount: isFull ? data.objectives.length : 3,
           separatorBuilder: (context, index) {
             return SizedBox(
-              height: 15,
+              height: 10,
             );
           },
         );

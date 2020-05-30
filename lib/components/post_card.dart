@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hack_bmg_flutter/constants.dart';
 
 class PostCard extends StatelessWidget {
-  double _widthCard = double.infinity;
+  final double _widthCard = double.infinity;
   final String date;
   final String title;
   final String description;

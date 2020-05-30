@@ -149,10 +149,42 @@ class HomePage extends StatelessWidget {
                 height: 20.0,
               ),
               Container(
-                height: 280,
+                height: 260,
                 width: double.infinity,
                 child: ObjectivesList(),
               ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                width: double.infinity,
+                child: FlatButton(
+                  onPressed: () {},
+                  color: Colors.orange,
+                  padding: EdgeInsets.all(15.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'Ver mais',
+                        style: kTextStyleWhite.copyWith(
+                          fontSize: 20.0,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
           SizedBox(
