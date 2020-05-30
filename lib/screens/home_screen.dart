@@ -1,32 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:hack_bmg_flutter/constants.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   static const id = 'HomeScreen';
+
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Container(),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        selectedIconTheme: kBottomThemeData.copyWith(
+          color: Colors.black,
+        ),
+        unselectedIconTheme: kBottomThemeData.copyWith(
+          color: Colors.grey,
+        ),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: SizedBox(
-              height: 0,
-            ),
+            icon: Icon(Icons.account_balance_wallet),
+            title: kVoidWidget,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            title: SizedBox(
-              height: 0,
-            ),
+            icon: Icon(Icons.school),
+            title: kVoidWidget,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat_bubble),
+            title: kVoidWidget,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            title: SizedBox(
-              height: 0,
-            ),
+            title: kVoidWidget,
           ),
         ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
     );
   }

@@ -16,7 +16,10 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void pushHome() {
-    Navigator.pushNamed(context, HomeScreen.id);
+    Future.delayed(
+      Duration.zero,
+      () => Navigator.pushNamed(context, HomeScreen.id),
+    );
   }
 
   @override
