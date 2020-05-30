@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: [
               Center(
-                child: Image.asset('images/bmg.jpg'),
+                child: Image.asset('lib/assets/images/logo.png'),
               ),
               TextFormField(
                 decoration: InputDecoration(

@@ -14,3 +14,9 @@ const kBottomThemeData = IconThemeData(
 const kVoidWidget = SizedBox(
   height: 0,
 );
+
+//Styles
+const kTextStyle = TextStyle(
+  fontFamily: 'Nunito',
+  fontWeight: FontWeight.w400,
+);
