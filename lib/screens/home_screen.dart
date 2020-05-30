@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hack_bmg_flutter/components/objective_tile.dart';
+import 'package:hack_bmg_flutter/components/accounts_list.dart';
+import 'package:hack_bmg_flutter/components/objectives_list.dart';
 import 'package:hack_bmg_flutter/constants.dart';
 import 'package:hack_bmg_flutter/components/summary_card.dart';
-import 'package:hack_bmg_flutter/models/objective.dart';
 
 class HomeScreen extends StatefulWidget {
   static const id = 'HomeScreen';
@@ -13,14 +13,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  List<Objective> objectives = [
-    Objective(
-      icon: Icons.directions_car,
-      label: 'Carro Novo',
-      value: 39600.00,
-      percent: 0.5,
-    ),
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -102,8 +94,35 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   height: 20.0,
                 ),
+                Container(
+                  height: 280,
+                  width: double.infinity,
+                  child: ObjectivesList(),
+                ),
               ],
-            )
+            ),
+            SizedBox(
+              height: 40.0,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Contas',
+                  style: kTextStyle.copyWith(
+                    fontSize: 30.0,
+                  ),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Container(
+                  height: 400,
+                  width: double.infinity,
+                  child: AccountList(),
+                ),
+              ],
+            ),
           ],
         ),
       ),
