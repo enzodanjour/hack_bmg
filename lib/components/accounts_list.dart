@@ -13,6 +13,7 @@ class AccountList extends StatelessWidget {
             crossAxisCount: 2,
             crossAxisSpacing: 30.0,
             mainAxisSpacing: 30.0,
+            childAspectRatio: 0.7,
           ),
           itemBuilder: (context, index) {
             final account = data.accounts[index];

@@ -117,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 20.0,
                 ),
                 Container(
-                  height: 400,
+                  height: 500,
                   width: double.infinity,
                   child: AccountList(),
                 ),
