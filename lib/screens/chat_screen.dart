@@ -35,6 +35,8 @@ class ChatScreen extends StatelessWidget {
                 'Algumas sugestões do que você me pedir:',
                 style: kTextStyle.copyWith(
                   color: Colors.orange,
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.w700,
                 ),
               )
             ],

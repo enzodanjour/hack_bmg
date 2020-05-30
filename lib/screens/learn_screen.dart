@@ -88,7 +88,7 @@ class _LearnScreenState extends State<LearnScreen> {
                       onPress: () {},
                     ),
                     SizedBox(
-                      height: 40.0,
+                      height: 60.0,
                     ),
                     Container(
                       width: double.infinity,
@@ -96,7 +96,7 @@ class _LearnScreenState extends State<LearnScreen> {
                         onPressed: () {},
                         color: Colors.white,
                         padding: EdgeInsets.symmetric(
-                          vertical: 15.0,
+                          vertical: 13.0,
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -105,12 +105,12 @@ class _LearnScreenState extends State<LearnScreen> {
                               'Ver mais publicações',
                               style: kTextStyle.copyWith(
                                 color: Colors.orange,
-                                fontSize: 25.0,
+                                fontSize: 20.0,
                               ),
                             ),
                             Icon(
                               Icons.navigate_next,
-                              size: 30.0,
+                              size: 25.0,
                               color: Colors.orange,
                             )
                           ],
@@ -123,7 +123,7 @@ class _LearnScreenState extends State<LearnScreen> {
                   ],
                 ),
                 SizedBox(
-                  height: 40.0,
+                  height: 60.0,
                 ),
               ],
             ),
