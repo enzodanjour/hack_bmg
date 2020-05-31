@@ -4,13 +4,15 @@ import 'package:hack_bmg_flutter/models/data_provider.dart';
 import 'package:provider/provider.dart';
 
 class ObjectivesList extends StatefulWidget {
+  bool isFull = false;
+  ObjectivesList({this.isFull = false});
+
   @override
   _ObjectivesListState createState() => _ObjectivesListState();
 }
 
 class _ObjectivesListState extends State<ObjectivesList> {
   final _controller = ScrollController();
-  final bool isFull = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class _ObjectivesListState extends State<ObjectivesList> {
             );
           },
           controller: _controller,
-          itemCount: isFull ? data.objectives.length : 3,
+          itemCount: widget.isFull ? data.objectives.length : 3,
           separatorBuilder: (context, index) {
             return SizedBox(
               height: 10,

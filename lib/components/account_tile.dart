@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hack_bmg_flutter/constants.dart';
 import 'package:flutter_money_formatter/flutter_money_formatter.dart';
+import 'package:hack_bmg_flutter/screens/bmg_account_screen.dart';
 
 class AccountTile extends StatelessWidget {
   final bool isBMG;
@@ -12,10 +13,6 @@ class AccountTile extends StatelessWidget {
 
   final FlutterMoneyFormatter fmf = FlutterMoneyFormatter(amount: 0);
 
-  static Widget addTile() {
-    return AddTile();
-  }
-
   @override
   Widget build(BuildContext context) {
     return isBMG
@@ -24,32 +21,6 @@ class AccountTile extends StatelessWidget {
             value: value,
           )
         : NormalTile(color: color, name: name, fmf: fmf, value: value);
-  }
-}
-
-class AddTile extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          color: Colors.grey, borderRadius: BorderRadius.circular(20.0)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Icon(
-            Icons.add,
-            size: 25.0,
-            color: Colors.white,
-          ),
-          Text(
-            'Adicionar',
-            style: kTextStyleWhite.copyWith(
-              fontSize: 20.0,
-            ),
-          )
-        ],
-      ),
-    );
   }
 }
 
@@ -64,57 +35,66 @@ class BMGTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20.0),
-      decoration: BoxDecoration(
-        color: Colors.orange,
-        borderRadius: BorderRadius.circular(
-          20.0,
-        ),
-        image: DecorationImage(
-          image: AssetImage('lib/assets/images/b_bmg.png'),
-          fit: BoxFit.cover,
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Container(
-                height: 20,
-                child: Image.asset(
-                  'lib/assets/images/logo_white.png',
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Icon(
-                Icons.sync,
-                size: 25.0,
-                color: Color(0xFFFFCF24),
-              )
-            ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          BMGAccountScreen.id,
+          arguments: value,
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.all(20.0),
+        decoration: BoxDecoration(
+          color: Colors.orange,
+          borderRadius: BorderRadius.circular(
+            20.0,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Icon(
-                Icons.remove_red_eye,
-                size: 25.0,
-                color: Colors.white,
-              ),
-              Text(
-                'R\$${fmf.copyWith(amount: value).output.nonSymbol}',
-                style: kTextStyle.copyWith(
+          image: DecorationImage(
+            image: AssetImage('lib/assets/images/b_bmg.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Container(
+                  height: 20,
+                  child: Image.asset(
+                    'lib/assets/images/logo_white.png',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Icon(
+                  Icons.sync,
+                  size: 25.0,
+                  color: Color(0xFFFFCF24),
+                )
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Icon(
+                  Icons.remove_red_eye,
+                  size: 25.0,
                   color: Colors.white,
-                  fontSize: 18.0,
                 ),
-              )
-            ],
-          ),
-        ],
+                Text(
+                  'R\$${fmf.copyWith(amount: value).output.nonSymbol}',
+                  style: kTextStyle.copyWith(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                  ),
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
