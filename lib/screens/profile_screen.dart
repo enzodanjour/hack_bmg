@@ -4,12 +4,14 @@ import 'package:hack_bmg_flutter/constants.dart';
 
 class ProfileScreen extends StatefulWidget {
   static const id = 'ProfileScreen';
+  
 
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  bool isSwitched = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,29 +73,38 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
             Container(
-              width: 100,
-              child: Row(
-                children: [
-                  Text(
-                    'simples', 
-                    style: kTextStyle.copyWith(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w400
-                    )
-                  ),
-                  Switch(
-                    value: null, onChanged: null
-                  ),
-                  Text(
-                    'Avançada', 
-                    style: kTextStyle.copyWith(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w400
-                    )
-                  ),
-                ],
-              ),
-            )
+              height: 25,
+            ),
+             Row(
+               mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Simples', 
+                  style: kTextStyle.copyWith(
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.w400
+                  )
+                ),
+                Switch(
+                  value: isSwitched, 
+                  onChanged: (value){
+                    setState(() {
+                      isSwitched = value;
+                      print('isSwitched');
+                    });
+                  },
+                  activeTrackColor: Colors.grey,
+                  activeColor:Colors.grey,
+                ),
+                Text(
+                  'Avançada', 
+                  style: kTextStyle.copyWith(
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.w400
+                  )
+                ),
+              ],
+            ),
           ],
         ),
       ),
