@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hack_bmg_flutter/screens/home_screen.dart';
+import 'package:hack_bmg_flutter/screens/intro_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   static const id = 'SplashScreen';
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void pushHome() {
     Future.delayed(
       Duration(seconds: 2),
-      () => Navigator.pushNamed(context, HomeScreen.id),
+      () => Navigator.pushNamed(context, IntroScreen.id),
     );
   }
 
