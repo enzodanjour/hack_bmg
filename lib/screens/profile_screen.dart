@@ -130,6 +130,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Expanded(child: Container()),
                 Container(
