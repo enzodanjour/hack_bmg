@@ -5,10 +5,22 @@ import 'package:hack_bmg_flutter/components/rounded_button.dart';
 import 'package:hack_bmg_flutter/constants.dart';
 import 'package:flutter_money_formatter/flutter_money_formatter.dart';
 
-class CustomDialog extends StatelessWidget {
+class CustomDialog extends StatefulWidget {
   final String text;
 
   CustomDialog({this.text});
+
+  @override
+  _CustomDialogState createState() => _CustomDialogState();
+}
+
+class _CustomDialogState extends State<CustomDialog> {
+  String dropdownValue;
+  void dropDown(String newValue) {
+    setState(() {
+      dropdownValue = newValue;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +29,13 @@ class CustomDialog extends StatelessWidget {
         borderRadius: BorderRadius.circular(40.0),
       ),
       elevation: 0.0,
-      child: dialogContent(context, text),
+      child: dialogContent(context, widget.text, dropdownValue, dropDown),
     );
   }
 }
 
-dialogContent(BuildContext context, String text) {
+dialogContent(BuildContext context, String text, String dropdownValue,
+    Function dropDown) {
   FlutterMoneyFormatter fmf = FlutterMoneyFormatter(amount: 0);
 
   return SingleChildScrollView(
@@ -90,24 +103,28 @@ dialogContent(BuildContext context, String text) {
           SizedBox(
             height: 10.0,
           ),
-          TextField(
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.symmetric(
-                horizontal: 20.0,
-              ),
-              hintText: 'R\$',
-              hintStyle: kTextStyle.copyWith(
-                color: Color(0xFF888888),
+          Container(
+            width: double.infinity,
+            child: DropdownButton<String>(
+              isExpanded: true,
+              value: dropdownValue,
+              icon: Icon(Icons.keyboard_arrow_down),
+              iconSize: 24,
+              elevation: 16,
+              style: kTextStyle.copyWith(
+                color: Colors.black,
                 fontWeight: FontWeight.w700,
               ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(
-                  color: Colors.grey,
-                  width: 1,
-                ),
-              ),
+              onChanged: dropDown,
+              items: <String>['Saúde', 'Educação', 'Lazer']
+                  .map<DropdownMenuItem<String>>(
+                (String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                },
+              ).toList(),
             ),
           ),
           SizedBox(
@@ -125,12 +142,12 @@ dialogContent(BuildContext context, String text) {
             height: 10.0,
           ),
           TextField(
-            keyboardType: TextInputType.number,
+            keyboardType: TextInputType.datetime,
             decoration: InputDecoration(
               contentPadding: EdgeInsets.symmetric(
                 horizontal: 20.0,
               ),
-              hintText: 'R\$',
+              hintText: '__/__/__',
               hintStyle: kTextStyle.copyWith(
                 color: Color(0xFF888888),
                 fontWeight: FontWeight.w700,

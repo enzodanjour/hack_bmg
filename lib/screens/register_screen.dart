@@ -1,6 +1,11 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:hack_bmg_flutter/components/rounded_button.dart';
+import 'package:hack_bmg_flutter/screens/home_screen.dart';
 import 'package:hack_bmg_flutter/screens/login_screen.dart';
+import 'package:hack_bmg_flutter/constants.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
+import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class RegisterScreen extends StatefulWidget {
   static const id = 'RegisterScreen';
@@ -13,120 +18,164 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _registerFormKey = GlobalKey<FormState>();
 
   final _nomeController = TextEditingController();
-  final _emailController =TextEditingController();
+  final _emailController = TextEditingController();
   final _senhaController = TextEditingController();
   final _confirmaSenhaController = TextEditingController();
+
+  //final _auth = FirebaseAuth.instance;
+
+  bool showSpinner = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:  SingleChildScrollView(
-        child: SafeArea(
-            child: Form(
-            key: _registerFormKey,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [ 
-                  Center(
-                    child: Image.asset('lib/assets/images/logo.png'),
-                  ),
-                  TextFormField(
-                   decoration: const InputDecoration(
-                     icon: Icon(Icons.person),
-                     hintText: 'Nome completo',
-                     labelText: 'Nome'
-                   ),
-                   controller: _nomeController,
-                   validator: (value){
-                     if(value.isEmpty){
-                       return 'Preencha o nome';
-                     }
-                     return null;
-                   },
-                  ),
-                  TextFormField(
-                   decoration: const InputDecoration(
-                     icon: Icon(Icons.email),
-                     hintText: 'Seu email',
-                     labelText: 'Email'
-                   ),
-                   keyboardType: TextInputType.emailAddress,
-                   controller: _emailController,
-                   validator: (value){
-                     if(value.isEmpty){
-                       return 'Preencha o email';
-                     }
-                     else if(!EmailValidator.validate(value)){
-                       return 'Informe um email válido';
-                     }
-                     return null;
-                   }
-                  ),
-                  TextFormField(
-                   decoration: const InputDecoration(
-                     icon: Icon(Icons.lock),
-                     hintText: 'Digite uma senha',
-                     labelText: 'Senha'
-                   ),
-                   obscureText: true,
-                   controller: _senhaController,
-                   validator: (value){
-                     if(value.isEmpty){
-                       return 'Preencha a senha';
-                     }
-                     else if(value != _confirmaSenhaController.text){
-                       return 'Senhas diferentes';
-                     }
-                     return null;
-                   },
-                  ),
-                  TextFormField(
-                   decoration: const InputDecoration(
-                     icon: Icon(Icons.lock_outline),
-                     hintText: 'Repita a senha',
-                     labelText: 'Repita a senha'
-                   ),
-                   obscureText: true,
-                   controller: _confirmaSenhaController,
-                   validator: (value){
-                     if(value.isEmpty){
-                       return'Preencha uma senha';
-                     }
-                     else if(value != _senhaController.text){
-                       return 'Senhas diferentes';
-                     }
-                     return null;
-                   },
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(top:29.0,bottom: 20.0),
-                    child: RaisedButton(
-                      child: Text('Enviar'),
-                      splashColor: Colors.orange,
-                      color: Colors.grey,
-                      textColor: Colors.black,
-                      onPressed: () async{
-                        if(_registerFormKey.currentState.validate()){
-                          try{  
+      body: ModalProgressHUD(
+        inAsyncCall: showSpinner,
+        child: Center(
+          child: SingleChildScrollView(
+            child: SafeArea(
+              child: Form(
+                  key: _registerFormKey,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        Center(
+                          child: Image.asset('lib/assets/images/logo.png'),
+                        ),
+                        SizedBox(
+                          height: 40.0,
+                        ),
+                        TextFormField(
+                          decoration: InputDecoration(
+                            hintText: 'Nome',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide.none,
+                            ),
+                            fillColor: Color(0xFFE8E8E8),
+                            filled: true,
+                          ),
+                          controller: _nomeController,
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              return 'Preencha o nome';
+                            }
+                            return null;
+                          },
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        TextFormField(
+                          decoration: InputDecoration(
+                            hintText: 'Email',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide.none,
+                            ),
+                            fillColor: Color(0xFFE8E8E8),
+                            filled: true,
+                          ),
+                          keyboardType: TextInputType.emailAddress,
+                          controller: _emailController,
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              return 'Preencha o email';
+                            } else if (!EmailValidator.validate(value)) {
+                              return 'Informe um email válido';
+                            }
+                            return null;
+                          },
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        TextFormField(
+                          decoration: InputDecoration(
+                            hintText: 'Senha',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide.none,
+                            ),
+                            fillColor: Color(0xFFE8E8E8),
+                            filled: true,
+                          ),
+                          obscureText: true,
+                          controller: _senhaController,
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              return 'Preencha a senha';
+                            } else if (value != _confirmaSenhaController.text) {
+                              return 'Senhas diferentes';
+                            }
+                            return null;
+                          },
+                        ),
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        RoundedButtom(
+                          color: Colors.orange,
+                          child: Container(
+                            padding: EdgeInsets.all(10.0),
+                            child: Text(
+                              'ENVIAR',
+                              style: kTextStyleWhite.copyWith(fontSize: 15.0),
+                            ),
+                          ),
+                          onPress: () async {
+                            setState(() {
+                              showSpinner = true;
+                            });
+                            try {
+                              // final newUser =
+                              //     await _auth.createUserWithEmailAndPassword(
+                              //         email: _emailController.text,
+                              //         password: _senhaController.text);
+                              // if (newUser != null) {
+                              //   Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //       builder: (context) => HomeScreen(
+                              //         userName: _nomeController.text,
+                              //       ),
+                              //     ),
+                              //   );
+                              //}
+                              setState(() {
+                                showSpinner = false;
+                              });
+                            } catch (e) {
+                              print(e);
+                            }
+                          },
+                        ),
+                        SizedBox(
+                          height: 15.0,
+                        ),
+                        Text(
+                          'Já possui uma conta?',
+                          style: kTextStyle.copyWith(
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        FlatButton(
+                          onPressed: () {
                             Navigator.pushNamed(context, LoginScreen.id);
-                          } catch(e){
-                              print('Error Happened: $e');
-                          }
-                        }
-                      }
+                          },
+                          child: Text(
+                            'Faça login aqui!',
+                            style: kTextStyle.copyWith(
+                              fontSize: 18.0,
+                            ),
+                          ),
+                        )
+                      ],
                     ),
-                  ),
-                  Text('Já possui uma conta?'),
-                  FlatButton(
-                    onPressed: (){
-                      Navigator.pushNamed(context, LoginScreen.id);
-                   }, 
-                    child: Text('Faça login aqui'))
-                ],
-              ),
-              )
+                  )),
             ),
+          ),
         ),
       ),
     );

@@ -11,6 +11,10 @@ import 'package:hack_bmg_flutter/components/navigation_bar.dart';
 import 'package:hack_bmg_flutter/screens/objectives_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  HomeScreen({this.userName});
+
+  final String userName;
+
   static const id = 'HomeScreen';
 
   @override
@@ -50,6 +54,10 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class HomePage extends StatelessWidget {
+  HomePage({this.name});
+
+  final String name;
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -73,7 +81,7 @@ class HomePage extends StatelessWidget {
                   height: 80.0,
                 ),
                 Text(
-                  'Olá,\nMaria!',
+                  'Olá,\n${name}!',
                   style: kTextStyleWhite.copyWith(
                     fontWeight: FontWeight.w700,
                     fontSize: 50.0,
@@ -84,7 +92,7 @@ class HomePage extends StatelessWidget {
                   height: 15.0,
                 ),
                 Text(
-                  'Bem-vinda de volta ao Simplifica_BMG! Acompanhe seu progresso em relação aos seus objetivos.',
+                  'Bem-vindo de volta ao Simplifica_BMG! Acompanhe seu progresso em relação aos seus objetivos.',
                   style: kTextStyleWhite.copyWith(
                     fontSize: 25.0,
                     height: 1,
