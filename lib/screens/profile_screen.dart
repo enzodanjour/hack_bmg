@@ -11,7 +11,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  bool isSwitched = false;
+  bool avancado = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,11 +59,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               )
             ),
             Container(
-              height: 25,
-            ),
-             Container(
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(10.0),
               child: Text(
                 'Tipo de experiência', 
                 style: kTextStyle.copyWith(
@@ -73,7 +70,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
             Container(
-              height: 25,
+              height: 10,
             ),
              Row(
                mainAxisAlignment: MainAxisAlignment.center,
@@ -86,15 +83,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   )
                 ),
                 Switch(
-                  value: isSwitched, 
+                  value: avancado, 
                   onChanged: (value){
                     setState(() {
-                      isSwitched = value;
-                      print('isSwitched');
+                      avancado = value;
                     });
                   },
-                  activeTrackColor: Colors.grey,
-                  activeColor:Colors.grey,
+                  activeTrackColor: Colors.green,
+                  activeColor:Colors.green,
                 ),
                 Text(
                   'Avançada', 
@@ -105,7 +101,35 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ],
             ),
-          ],
+            Container(
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.all(16.0),
+              child: avancado ? Text(
+                'No modo avançado você poupa e também investe. Esse modo é indicado para quem deseja aprender a investir o seu dinheiro e aumentar o patrimônio. Invista com baixo ou alto risco.', 
+                style: kTextStyle.copyWith(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w200
+                )
+              ) : Text(
+                'No modo simples você apenas poupa o seu dinheiro. Esse modo é indicado para quem deseja aprender a gerir melhor o seu dinheiro, sem nenhum risco.', 
+                style: kTextStyle.copyWith(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w200
+                )
+              ),
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'Distribuição do seu dinheiro', 
+                style: kTextStyle.copyWith(
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.w400
+                )
+              ),
+            ),
+          ], 
         ),
       ),
     );
