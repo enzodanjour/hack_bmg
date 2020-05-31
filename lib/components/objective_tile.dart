@@ -63,13 +63,17 @@ class ObjectiveTile extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.all(0.0),
                     width: double.infinity,
-                    child: Expanded(
-                      child: LinearPercentIndicator(
-                        lineHeight: 10.0,
-                        percent: percent,
-                        backgroundColor: Color(0xFFCCCCCC),
-                        progressColor: Color(0xFF417643),
-                      ),
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: LinearPercentIndicator(
+                            lineHeight: 10.0,
+                            percent: percent,
+                            backgroundColor: Color(0xFFCCCCCC),
+                            progressColor: Color(0xFF417643),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],

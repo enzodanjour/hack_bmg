@@ -21,6 +21,7 @@ class AccountList extends StatelessWidget {
               color: account.color,
               name: account.name,
               value: account.value,
+              isBMG: account.isBMG,
             );
           },
           itemCount: data.accounts.length,

@@ -19,7 +19,13 @@ class DataProvider extends ChangeNotifier {
       percent: 0.5,
     ),
     Objective(
-      icon: Icons.directions_car,
+      icon: Icons.work,
+      label: 'Viagem ao Peru',
+      value: 25000.00,
+      percent: 0.5,
+    ),
+    Objective(
+      icon: Icons.work,
       label: 'Viagem ao Peru',
       value: 25000.00,
       percent: 0.5,
@@ -28,9 +34,8 @@ class DataProvider extends ChangeNotifier {
 
   List<Account> _accounts = [
     Account(
-      color: Colors.orange,
-      name: 'BMG',
       value: 1500.00,
+      isBMG: true,
     ),
     Account(
       color: Colors.brown,
