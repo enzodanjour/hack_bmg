@@ -53,16 +53,57 @@ class _LearnScreenState extends State<LearnScreen> {
                       height: 20.0,
                     ),
                     Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam magna aliquam mauris nec vitae.',
+                      'Confira as notícias mais recentes no nosso blog.',
                       style: kTextStyle.copyWith(
                         color: Colors.white,
                         fontSize: 28.0,
                       ),
                     ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: TextField(
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(
+                                vertical: 5.0,
+                                horizontal: 20.0,
+                              ),
+                              hintText: 'Buscar',
+                              hintStyle: kTextStyle.copyWith(
+                                color: Color(0xFF888888),
+                                fontWeight: FontWeight.w700,
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                borderSide: BorderSide.none,
+                              ),
+                              fillColor: Color(0xFFE8E8E8),
+                              filled: true,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Container(
+                          height: 50.0,
+                          width: 50.0,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFE8E8E8),
+                            borderRadius: BorderRadius.circular(50.0),
+                          ),
+                          child: Icon(
+                            Icons.search,
+                            size: 30.0,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
-                ),
-                SizedBox(
-                  height: 30.0,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

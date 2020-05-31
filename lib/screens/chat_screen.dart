@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hack_bmg_flutter/components/rounded_button.dart';
 import 'package:hack_bmg_flutter/constants.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -38,7 +39,63 @@ class ChatScreen extends StatelessWidget {
                   fontSize: 15.0,
                   fontWeight: FontWeight.w700,
                 ),
-              )
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              RoundedButtom(
+                color: Colors.orange,
+                child: Container(
+                  padding: EdgeInsets.all(5.0),
+                  child: Text(
+                    'Eu quero pagar um boleto',
+                    style: kTextStyleWhite.copyWith(fontSize: 16.0),
+                  ),
+                ),
+                onPress: () {},
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              RoundedButtom(
+                color: Colors.orange,
+                child: Container(
+                  padding: EdgeInsets.all(5.0),
+                  child: Text(
+                    'Quero criar um novo objetivo',
+                    style: kTextStyleWhite.copyWith(fontSize: 16.0),
+                  ),
+                ),
+                onPress: () {},
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              RoundedButtom(
+                color: Colors.orange,
+                child: Container(
+                  padding: EdgeInsets.all(5.0),
+                  child: Text(
+                    'Quero alterar um objetivo meu',
+                    style: kTextStyleWhite.copyWith(fontSize: 16.0),
+                  ),
+                ),
+                onPress: () {},
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              RoundedButtom(
+                color: Colors.grey,
+                child: Container(
+                  padding: EdgeInsets.all(5.0),
+                  child: Text(
+                    'Ver a lista completa do que pedir à Duda',
+                    style: kTextStyleWhite.copyWith(fontSize: 16.0),
+                  ),
+                ),
+                onPress: () {},
+              ),
             ],
           ),
         ),

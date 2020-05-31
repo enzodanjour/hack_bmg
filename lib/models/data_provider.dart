@@ -10,24 +10,21 @@ class DataProvider extends ChangeNotifier {
       icon: Icons.directions_car,
       label: 'Novo Carro',
       value: 30900.00,
+      color: Color(0xFF3C5C83),
       percent: 0.5,
     ),
     Objective(
       icon: Icons.home,
       label: 'Casa própria',
       value: 150500.00,
+      color: Color(0xFFFF6060),
       percent: 0.5,
     ),
     Objective(
       icon: Icons.work,
       label: 'Viagem ao Peru',
       value: 25000.00,
-      percent: 0.5,
-    ),
-    Objective(
-      icon: Icons.work,
-      label: 'Viagem ao Peru',
-      value: 25000.00,
+      color: Color(0xFF30A8FF),
       percent: 0.5,
     ),
   ];
@@ -38,12 +35,12 @@ class DataProvider extends ChangeNotifier {
       isBMG: true,
     ),
     Account(
-      color: Colors.brown,
+      color: Color(0xFF83673C),
       name: 'Carteira',
       value: 200.00,
     ),
     Account(
-      color: Colors.purple,
+      color: Color(0xFF683C83),
       name: 'Outro banco',
       value: 100.00,
     ),
@@ -55,5 +52,17 @@ class DataProvider extends ChangeNotifier {
 
   UnmodifiableListView<Account> get accounts {
     return UnmodifiableListView(_accounts);
+  }
+
+  void addObjective({IconData icon, String label, double value, Color color}) {
+    final objective = Objective(
+      icon: icon,
+      label: label,
+      value: value,
+      color: color,
+      percent: 0,
+    );
+    _objectives.add(objective);
+    notifyListeners();
   }
 }
