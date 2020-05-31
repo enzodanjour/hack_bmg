@@ -6,7 +6,7 @@ class ProfileScreen extends StatefulWidget {
   static const id = 'ProfileScreen';
   
 
-  @override
+  @override 
   _ProfileScreenState createState() => _ProfileScreenState();
 }
 
@@ -116,7 +116,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   fontSize: 16.0,
                   fontWeight: FontWeight.w200
                 )
-              ),
+              ), 
             ),
             Container(
               alignment: Alignment.centerLeft,
@@ -129,6 +129,104 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 )
               ),
             ),
+            Row(
+              children: [
+                Expanded(child: Container()),
+                Container(
+                  height: 140,
+                  width: 71,
+                  decoration: BoxDecoration(
+                    color: Colors.purpleAccent,
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(10),
+                    ),
+                    boxShadow: [
+                      // to make elevation
+                      BoxShadow(
+                        color: Colors.black45,
+                        offset: Offset(2, 2),
+                        blurRadius: 4,
+                      ),
+                      // to make the coloured border
+                      BoxShadow(
+                        color: Colors.purple,
+                        offset: Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(child: Container()),
+                Container(
+                  height: 126,
+                  width: 71,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(10),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black45,
+                        offset: Offset(2, 2),
+                        blurRadius: 4,
+                      ),
+                      // to make the coloured border
+                      BoxShadow(
+                        color: Colors.blue[600],
+                        offset: Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(child: Container()),
+                Container(
+                  height: 104,
+                  width: 71,
+                  decoration: BoxDecoration(
+                    color: Colors.yellow,
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(10),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black45,
+                        offset: Offset(2, 2),
+                        blurRadius: 4,
+                      ),
+                      // to make the coloured border
+                      BoxShadow(
+                        color: Colors.yellow[600],
+                        offset: Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(child: Container()),
+                Container(
+                  height: 70,
+                  width: 71,
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(10),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black45,
+                        offset: Offset(2, 2),
+                        blurRadius: 4,
+                      ),
+                      // to make the coloured border
+                      BoxShadow(
+                        color: Colors.grey[600],
+                        offset: Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(child: Container()),
+              ],
+            )
           ], 
         ),
       ),
