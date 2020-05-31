@@ -136,7 +136,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 140,
                   width: 71,
                   decoration: BoxDecoration(
-                    color: Colors.purpleAccent,
+                    color: Colors.red[200],
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(10),
                     ),
@@ -149,7 +149,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       // to make the coloured border
                       BoxShadow(
-                        color: Colors.purple,
+                        color: Colors.red[600],
                         offset: Offset(0, 4),
                       ),
                     ],
@@ -160,7 +160,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 126,
                   width: 71,
                   decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Colors.blue[400],
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(10),
                     ),
@@ -172,7 +172,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       // to make the coloured border
                       BoxShadow(
-                        color: Colors.blue[600],
+                        color: Colors.blue[900],
                         offset: Offset(0, 4),
                       ),
                     ],
@@ -183,7 +183,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 104,
                   width: 71,
                   decoration: BoxDecoration(
-                    color: Colors.yellow,
+                    color: Colors.yellow[300],
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(10),
                     ),
@@ -206,7 +206,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 70,
                   width: 71,
                   decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: Colors.grey[400],
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(10),
                     ),
@@ -218,7 +218,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       // to make the coloured border
                       BoxShadow(
-                        color: Colors.grey[600],
+                        color: Colors.grey[800],
                         offset: Offset(0, 4),
                       ),
                     ],
