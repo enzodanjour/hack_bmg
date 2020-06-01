@@ -1,7 +1,4 @@
 <p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/lukemorales/react-native-design-code.svg">
-
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/lukemorales/react-native-design-code.svg">
 
   <a href="https://www.codacy.com/app/lukemorales/react-native-design-code?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lukemorales/react-native-design-code&amp;utm_campaign=Badge_Grade">
     <img alt="Codacy grade" src="https://img.shields.io/codacy/grade/04db4b43120b4d05b9b39c9d2da97300.svg">
