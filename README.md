@@ -13,11 +13,6 @@
   <a href="#memo-license">License</a>
 </p>
 
-<p align="center">
-  <img alt="App Demo" src="https://res.cloudinary.com/lukemorales/image/upload/v1563901304/readme_logos/designcode_screen_01_nxrabs.gif">
-  <img alt="App Demo" src="https://res.cloudinary.com/lukemorales/image/upload/v1563901538/readme_logos/designcode_screen_02_kuvvwt.gif">
-</p>
-
 ## :rocket: Technologies
 
 This project was developed with the following technologies:
