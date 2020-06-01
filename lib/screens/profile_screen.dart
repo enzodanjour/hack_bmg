@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getflutter/getflutter.dart';
+import 'package:hack_bmg_flutter/components/accounts_list.dart';
 import 'package:hack_bmg_flutter/constants.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -91,8 +92,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         avancado = value;
                       });
                     },
-                    activeTrackColor: Colors.green,
-                    activeColor:Colors.green,
+                    activeTrackColor: Colors.orange, 
+                    activeColor:Colors.orange,
                   ),
                   Text(
                     'Avançada', 
@@ -230,7 +231,145 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Expanded(child: Container()),
                 ],
               ),
-                
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.all(16.0),
+                child: Text(
+                  'Contas', 
+                  style: kTextStyle.copyWith(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.w400
+                  )
+                )
+              ),
+              Container(
+                padding: EdgeInsets.all(30.0),
+                height: 580,
+                width: double.infinity,
+                child: AccountList(),
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.all(16.0),
+                child: Text(
+                  'Desempenho', 
+                  style: kTextStyle.copyWith(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.w400
+                  )
+                )
+              ),
+              Row(
+                children: [ 
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(
+                      'Nivel:', 
+                    style: kTextStyle.copyWith(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w800
+                    )
+                  )
+                 ),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(
+                      'Lendário', 
+                      style: kTextStyle.copyWith(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w400
+                      )
+                    )
+                  ),
+                  Transform.rotate(
+                    angle: 90 * 3.14 / 180,
+                    child: Icon(
+                      Icons.label,
+                      color: Colors.blue[900],
+                    ),
+                  ),                
+                ] 
+               ),
+               Container(
+                    alignment: Alignment.centerLeft,
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(
+                      'Uau! Você é uma lenda! Se manteve dentro dos objetivos durante 2 anos e 241 dias.', 
+                      style: kTextStyle.copyWith(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w400
+                      )
+                    )
+                  ),
+              Row(
+                children: [ 
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(
+                      'Pontos:', 
+                    style: kTextStyle.copyWith(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w800
+                    )
+                  )
+                 ),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(
+                      '9860', 
+                      style: kTextStyle.copyWith(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w400
+                      )
+                    )
+                  ),
+                ]
+              ),  
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.all(16.0),
+                child: Text(
+                  'Sabia que você pode converter seus pontos em moedas BMG e ter acesso a várias vantagens? Saiba mais', 
+                  style: kTextStyle.copyWith(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w400
+                  )
+                ),
+              ), 
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.all(16.0),
+                  child: !avancado ? null :
+                  Column(
+                    children:[ 
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Investimentos', 
+                        style: kTextStyle.copyWith(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.w800
+                        
+                        )
+                      ),
+                    ), 
+                    Container(
+                      height:10.0
+                    ),
+                    Text(
+                      'Você ainda não fez nenhum investimento. Sabia que nós te ensinamos a melhor forma de investir o seu dinheiro? No modo avançado, além de você receber publicações e notificações com dicas de investimento, nós temos a simulação de investimento. Faça o primeiro tutorial, apertando o botão abaixo, e veja como funciona.', 
+                      style: kTextStyle.copyWith(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w400
+                      )
+                    )
+                  ]
+                )
+              ),
             ], 
           ),
         ),
