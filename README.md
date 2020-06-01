@@ -1,14 +1,5 @@
 <p align="center">
-
-  <a href="https://www.codacy.com/app/lukemorales/react-native-design-code?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lukemorales/react-native-design-code&amp;utm_campaign=Badge_Grade">
-    <img alt="Codacy grade" src="https://img.shields.io/codacy/grade/04db4b43120b4d05b9b39c9d2da97300.svg">
-  </a>
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/lukemorales/react-native-design-code.svg">
-  <a href="https://github.com/lukemorales/react-native-design-code/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lukemorales/react-native-design-code.svg">
-  </a>
-
+  
   <a href="https://github.com/lukemorales/react-native-design-code/issues">
     <img alt="Repository issues" src="https://img.shields.io/github/issues/lukemorales/react-native-design-code.svg">
   </a>
