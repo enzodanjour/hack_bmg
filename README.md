@@ -13,6 +13,7 @@
 Este projeto foi desenvolvido com as seguintes ferramentas:
 
 -  [Flutter](https://flutter.dev/)
+-  [Dart](https://dart.dev/)
 -  [Firebase](https://firebase.google.com/)
 -  [VS Code](https://code.visualstudio.com/)
 
