@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  Experiência personalizada para gestão financeira.
+  Experiência personalizada para gestão financeira
 </h4>
 
 <p align="center">
