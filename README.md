@@ -19,7 +19,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/lukemorales/react-native-design-code designCode
+$ git clone https://github.com/VictorRocha-sys/hack_bmg_flutter.git
 
 # Go into the repository
 $ cd designCode
