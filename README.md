@@ -7,10 +7,6 @@
 </h4>
 
 <p align="center">
-  
-<p align="center">
-  <a href="#rocket-ferramentas">Ferramentas</a>
-</p>
 
 ## :rocket: Ferramentas
 
