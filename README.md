@@ -11,7 +11,7 @@ This project was developed with the following technologies:
 
 -  [Flutter](https://flutter.dev/)
 -  [Firebase](https://firebase.google.com/)
--  [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
+-  [VS Code](https://code.visualstudio.com/)
 
 ## :information_source: How To Use
 
