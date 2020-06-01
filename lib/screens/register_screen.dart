@@ -20,7 +20,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _nomeController = TextEditingController();
   final _emailController = TextEditingController();
   final _senhaController = TextEditingController();
-  final _confirmaSenhaController = TextEditingController();
 
   final _auth = FirebaseAuth.instance;
 
@@ -119,9 +118,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           validator: (value) {
                             if (value.isEmpty) {
                               return 'Preencha a senha';
-                            } else if (value != _confirmaSenhaController.text) {
-                              return 'Senhas diferentes';
-                            }
+                            } 
                             return null;
                           },
                         ),
@@ -144,8 +141,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             try {
                               final newUser =
                                   await _auth.createUserWithEmailAndPassword(
-                                      email: 'lvictortomaz@gmail.com',
-                                      password: '12345678');
+                                      email: _emailController.text,
+                                      password: _senhaController.text);
                               if (newUser != null) {
                                 Navigator.push(
                                   context,

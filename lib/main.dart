@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => DataProvider(),
       child: MaterialApp(
-        initialRoute: SplashScreen.id,
+        initialRoute: RegisterScreen.id,
         routes: {
           SplashScreen.id: (context) => SplashScreen(),
           HomeScreen.id: (context) => HomeScreen(),
