@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  Animations and Gestures Manipulation Heavy React Native App
+  Experiência personalizada para gestão financeira.
 </h4>
 
 <p align="center">
