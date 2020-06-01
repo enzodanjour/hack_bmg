@@ -1,5 +1,5 @@
 <h1 align="center">
-    Design+Code
+    Simplifica_BMG
 </h1>
 
 <h4 align="center">
