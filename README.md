@@ -1,4 +1,4 @@
-# simplifica_BMG
+# Simplifica_BMG
 
 A new Flutter project.
 
