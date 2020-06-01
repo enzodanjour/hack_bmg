@@ -18,12 +18,7 @@ class GoalsList extends StatelessWidget {
           ),
           itemBuilder: (context, index) {
             final account = data.accounts[index];
-            return AccountTile(
-              color: account.color,
-              name: account.name,
-              value: account.value,
-              isBMG: account.isBMG,
-            );
+            return null;
           },
           itemCount: data.accounts.length,
         );
