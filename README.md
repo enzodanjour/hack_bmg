@@ -13,15 +13,15 @@
   <a href="#information_source-how-to-use">How To Use</a>
 </p>
 
-## :rocket: Technologies
+## :rocket: Ferramentas
 
-This project was developed with the following technologies:
+Este projeto foi desenvolvido com as seguintes ferramentas:
 
 -  [Flutter](https://flutter.dev/)
 -  [Firebase](https://firebase.google.com/)
 -  [VS Code](https://code.visualstudio.com/)
 
-## :information_source: How To Use
+## :information_source: Como usar
 
 To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v10.16][nodejs] or higher + [Yarn v1.13][yarn] or higher installed on your computer. From your command line:
 
