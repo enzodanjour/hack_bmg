@@ -4,7 +4,7 @@ import 'package:hack_bmg_flutter/components/rounded_button.dart';
 import 'package:hack_bmg_flutter/constants.dart';
 import 'package:hack_bmg_flutter/screens/home_screen.dart';
 import 'package:hack_bmg_flutter/screens/register_screen.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  //final _auth = FirebaseAuth.instance;
+  final _auth = FirebaseAuth.instance;
 
   bool showSpinner = false;
 
@@ -106,13 +106,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                   showSpinner = true;
                                 });
                                 final user =
-                                    //await _auth.signInWithEmailAndPassword(
-                                    //    email: _emailController.text,
-                                    //    password: _passwordController.text);
-                                    //if (user != null) {
-                                    //  Navigator.pushNamed(context, HomeScreen.id);
-                                    //}
-                                    setState(() {
+                                    await _auth.signInWithEmailAndPassword(
+                                        email: _emailController.text,
+                                        password: _passwordController.text);
+                                if (user != null) {
+                                  Navigator.pushNamed(context, HomeScreen.id);
+                                }
+                                setState(() {
                                   showSpinner = false;
                                 });
                               } catch (e) {

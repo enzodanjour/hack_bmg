@@ -9,6 +9,7 @@ import 'package:hack_bmg_flutter/screens/learn_screen.dart';
 import 'package:hack_bmg_flutter/components/message_bar.dart';
 import 'package:hack_bmg_flutter/components/navigation_bar.dart';
 import 'package:hack_bmg_flutter/screens/objectives_screen.dart';
+import 'package:hack_bmg_flutter/screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({this.userName});
@@ -28,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HomePage(),
     LearnScreen(),
     ChatScreen(),
+    ProfileScreen(),
   ];
 
   void onItemTapped(int index) {
@@ -81,7 +83,7 @@ class HomePage extends StatelessWidget {
                   height: 80.0,
                 ),
                 Text(
-                  'Olá,\n${name}!',
+                  'Olá,\nMaria!',
                   style: kTextStyleWhite.copyWith(
                     fontWeight: FontWeight.w700,
                     fontSize: 50.0,

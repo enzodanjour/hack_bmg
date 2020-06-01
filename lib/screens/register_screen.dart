@@ -4,7 +4,7 @@ import 'package:hack_bmg_flutter/components/rounded_button.dart';
 import 'package:hack_bmg_flutter/screens/home_screen.dart';
 import 'package:hack_bmg_flutter/screens/login_screen.dart';
 import 'package:hack_bmg_flutter/constants.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -22,7 +22,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _senhaController = TextEditingController();
   final _confirmaSenhaController = TextEditingController();
 
-  //final _auth = FirebaseAuth.instance;
+  final _auth = FirebaseAuth.instance;
+
+  String name;
+  String email;
+  String password;
 
   bool showSpinner = false;
 
@@ -56,6 +60,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             fillColor: Color(0xFFE8E8E8),
                             filled: true,
                           ),
+                          onChanged: (value) {
+                            name = value;
+                          },
                           controller: _nomeController,
                           validator: (value) {
                             if (value.isEmpty) {
@@ -78,6 +85,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             filled: true,
                           ),
                           keyboardType: TextInputType.emailAddress,
+                          onChanged: (value) {
+                            email = value;
+                          },
                           controller: _emailController,
                           validator: (value) {
                             if (value.isEmpty) {
@@ -102,6 +112,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             filled: true,
                           ),
                           obscureText: true,
+                          onChanged: (value) {
+                            password = value;
+                          },
                           controller: _senhaController,
                           validator: (value) {
                             if (value.isEmpty) {
@@ -129,20 +142,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               showSpinner = true;
                             });
                             try {
-                              // final newUser =
-                              //     await _auth.createUserWithEmailAndPassword(
-                              //         email: _emailController.text,
-                              //         password: _senhaController.text);
-                              // if (newUser != null) {
-                              //   Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //       builder: (context) => HomeScreen(
-                              //         userName: _nomeController.text,
-                              //       ),
-                              //     ),
-                              //   );
-                              //}
+                              final newUser =
+                                  await _auth.createUserWithEmailAndPassword(
+                                      email: 'lvictortomaz@gmail.com',
+                                      password: '12345678');
+                              if (newUser != null) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => HomeScreen(
+                                      userName: name,
+                                    ),
+                                  ),
+                                );
+                              }
                               setState(() {
                                 showSpinner = false;
                               });
