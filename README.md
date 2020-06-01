@@ -1,4 +1,4 @@
-# hack_bmg_flutter
+# Simplifica_BMG
 
 A new Flutter project.
 

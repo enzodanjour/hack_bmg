@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hack_bmg_flutter/screens/account_screen.dart';
 import 'package:hack_bmg_flutter/screens/bmg_account_screen.dart';
+import 'package:hack_bmg_flutter/screens/intro_screen.dart';
 import 'package:hack_bmg_flutter/screens/login_screen.dart';
 import 'package:hack_bmg_flutter/screens/profile_screen.dart';
 import 'package:hack_bmg_flutter/screens/objectives_screen.dart';
@@ -28,6 +30,8 @@ class MyApp extends StatelessWidget {
           ProfileScreen.id: (context) => ProfileScreen(),
           ObjectivesScreen.id: (context) => ObjectivesScreen(),
           BMGAccountScreen.id: (context) => BMGAccountScreen(),
+          AccountScreen.id: (context) => AccountScreen(),
+          IntroScreen.id: (context) => IntroScreen(),
         },
       ),
     );

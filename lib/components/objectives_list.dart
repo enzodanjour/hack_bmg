@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hack_bmg_flutter/components/objective_tile.dart';
 import 'package:hack_bmg_flutter/models/data_provider.dart';
+import 'package:hack_bmg_flutter/screens/info_screen.dart';
 import 'package:provider/provider.dart';
 
 class ObjectivesList extends StatefulWidget {
@@ -21,12 +22,34 @@ class _ObjectivesListState extends State<ObjectivesList> {
         return ListView.separated(
           itemBuilder: (context, index) {
             final objective = data.objectives[index];
-            return ObjectiveTile(
-              icon: objective.icon,
-              label: objective.label,
-              value: objective.value,
-              percent: objective.percent,
-            );
+            return widget.isFull
+                ? ObjectiveTile(
+                    icon: objective.icon,
+                    label: objective.label,
+                    value: objective.value,
+                    percent: objective.percent,
+                  )
+                : ObjectiveTile(
+                    icon: objective.icon,
+                    label: objective.label,
+                    value: objective.value,
+                    percent: objective.percent,
+                    onPress: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) => SingleChildScrollView(
+                          child: Container(
+                            child: InfoScreen(
+                              value: objective.value,
+                              icon: objective.icon,
+                              name: objective.label,
+                              percent: objective.percent,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  );
           },
           controller: _controller,
           itemCount: widget.isFull ? data.objectives.length : 3,

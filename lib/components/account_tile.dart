@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hack_bmg_flutter/constants.dart';
 import 'package:flutter_money_formatter/flutter_money_formatter.dart';
+import 'package:hack_bmg_flutter/screens/account_screen.dart';
 import 'package:hack_bmg_flutter/screens/bmg_account_screen.dart';
 
 class AccountTile extends StatelessWidget {
@@ -20,7 +21,12 @@ class AccountTile extends StatelessWidget {
             fmf: fmf,
             value: value,
           )
-        : NormalTile(color: color, name: name, fmf: fmf, value: value);
+        : NormalTile(
+            color: color,
+            name: name,
+            fmf: fmf,
+            value: value,
+          );
   }
 }
 
@@ -37,10 +43,13 @@ class BMGTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(
+        Navigator.push(
           context,
-          BMGAccountScreen.id,
-          arguments: value,
+          MaterialPageRoute(
+            builder: (context) => BMGAccountScreen(
+              value: value,
+            ),
+          ),
         );
       },
       child: Container(
@@ -115,44 +124,58 @@ class NormalTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20.0),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(
-          20.0,
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Text(
-            name,
-            style: kTextStyle.copyWith(
-              color: Colors.white,
-              fontSize: 18.0,
-              fontWeight: FontWeight.w700,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AccountScreen(
+              value: value,
+              color: color,
+              name: name,
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Icon(
-                Icons.remove_red_eye,
-                size: 25.0,
-                color: Colors.white,
-              ),
-              Text(
-                'R\$${fmf.copyWith(amount: value).output.nonSymbol}',
-                style: kTextStyle.copyWith(
-                  color: Colors.white,
-                  fontSize: 18.0,
-                ),
-              )
-            ],
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.all(20.0),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(
+            20.0,
           ),
-        ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Text(
+              name,
+              style: kTextStyle.copyWith(
+                color: Colors.white,
+                fontSize: 18.0,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Icon(
+                  Icons.remove_red_eye,
+                  size: 25.0,
+                  color: Colors.white,
+                ),
+                Text(
+                  'R\$${fmf.copyWith(amount: value).output.nonSymbol}',
+                  style: kTextStyle.copyWith(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                  ),
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
