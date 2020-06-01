@@ -1,12 +1,3 @@
-<h1 align="center">
-    <img alt="Design+Code" src="https://res.cloudinary.com/lukemorales/image/upload/v1563812296/readme_logos/designcode_c8hcm0.png" />
-    <br>
-    Design+Code
-</h1>
-
-<h4 align="center">
-  Animations and Gestures Manipulation Heavy React Native App
-</h4>
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/lukemorales/react-native-design-code.svg">
 
