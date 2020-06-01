@@ -9,8 +9,8 @@
 <p align="center">
   
 <p align="center">
-  <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-how-to-use">How To Use</a>
+  <a href="#rocket-technologies">Ferramentas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#information_source-how-to-use">Como usar</a>
 </p>
 
 ## :rocket: Ferramentas
