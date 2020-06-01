@@ -1,3 +1,11 @@
+<h1 align="center">
+    Design+Code
+</h1>
+
+<h4 align="center">
+  Animations and Gestures Manipulation Heavy React Native App
+</h4>
+
 <p align="center">
   
 <p align="center">
